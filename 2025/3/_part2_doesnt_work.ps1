@@ -7,7 +7,7 @@ param (
 [int64[]] $HighestJoltage = foreach ($Bank in $Banks) {
     # Reverse array with stack
     [System.Collections.Generic.Stack[char]] $Chars = $Bank.ToCharArray()
-    
+
     # Initialize with first 2 digits
     [char[]] $Return = [char[]]::new(2)
     (1..2) | ForEach-Object { $Return[ - $_] = $Chars.Pop() }
